@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Smyapp_Connector::advanced"
+        	 title="Magento Mobile Shop"
+        	 module="Smyapp_Connector"
+        	 sortOrder="10" 
+        	 resource="Smyapp_Connector::advanced"
+		/>
+        
+		<add id="Smyapp_Connector::advanced_connector"
+			 title="Configuration" 
+			 module="Smyapp_Connector" 
+			 sortOrder="11"  
+			 parent="Smyapp_Connector::advanced" 
+			 resource="Smyapp_Connector::advanced_connector"
+		/>
+
+		<add id="Smyapp_Connector::connector_configuration" 
+			 title="Manage Configuration" 
+			 module="Smyapp_Connector" 
+			 sortOrder="12"  
+			 parent="Smyapp_Connector::advanced_connector" 
+			 action="adminhtml/system_config/edit/section/configuration"	
+			 resource="Smyapp_Connector::connector_configuration"
+		/>
+
+		<add id="Smyapp_Connector::second_level_example" 
+			 title="Manage Banners" 
+			 module="Smyapp_Connector" 
+			 sortOrder="13"  
+			 resource="Magento_Backend::content"
+			 
+			 parent="Smyapp_Connector::advanced_connector" 
+			 action="grid/grid"	
+
+		/>
+
+		<add id="Smyapp_Connector::third_level_eample" 
+			 title="Manage Dashboard" 
+			 module="Smyapp_Connector" 
+			 sortOrder="14"  
+			 resource="Magento_Backend::content"			 
+			 parent="Smyapp_Connector::advanced_connector" 
+			 action="Smyapp_Connector/dashboard"
+		/>
+
+		
+<!--  		 <add id="Smyapp_Connector::connector_banner" title="Manage Banner" module="Smyapp_Connector" sortOrder="13"  parent="Smyapp_Connector::advanced_connector" 
+ 				action="adminhtml/system_config/edit/section/configuration"	resource="Smyapp_Connector::connector_banner"/> -->
+ 		 
+ 		<!--		<add id="Smyapp_Connector::connector_notification" title="Push Notification" module="Smyapp_Connector" sortOrder="14"  parent="Smyapp_Connector::advanced_connector" 
+ 				action="Smyapp_Connector/notification"	resource="Smyapp_Connector::connector_notification"/>
+ 			 
+ 		        <add id="Smyapp_Connector::connector_support" title="Connector Support" module="Smyapp_Connector" sortOrder="15"  parent="Smyapp_Connector::advanced_connector" 
+ 				action="Smyapp_Connector/support"	resource="Smyapp_Connector::connector_support"/> -->
+
+    </menu>
+</config>
+

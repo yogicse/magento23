@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="controller_action_predispatch">
+        <observer name="Smyapp_Connector_Observer_ControllerActionPredispatch" 
+        	instance="Smyapp\Connector\Observer\ControllerActionPredispatch" shared="false"   />
+    </event>
+    <event name="checkout_submit_all_afters">
+        <observer name="Smyapp_Connector_Observer_SalesOrderPlaceAfterObserver" instance="Smyapp\Connector\Observer\SalesOrderPlaceAfterObserver" />
+    </event>
+      <event name="customer_register_app">
+        <observer name="Smyapp_Connector_Observer_Smyapp_customer_register_success_observer" instance="Smyapp\Connector\Observer\SmyappCustomerRegisterSuccessObserver" />
+    </event>
+     <event name="customer_order_placed_app">
+        <observer name="Smyapp_Connector_Observer_Smyapp_sales_order_place_after_observer" instance="Smyapp\Connector\Observer\SmyappSalesOrderPlaceAfterObserver" />
+    </event>
+</config>
